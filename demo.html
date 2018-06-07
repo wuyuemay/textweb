@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="demo.js"></script>
+<!--<script>-->
+    <!--var aa = function (x) {-->
+        <!--var p = new Promise((resolve,reject)=>{-->
+            <!--if(x>5){-->
+                <!--x++;-->
+                <!--resolve(x);-->
+            <!--}else{-->
+                <!--x&#45;&#45;;-->
+                <!--reject(x);-->
+            <!--}-->
+        <!--});-->
+        <!--return p;-->
+    <!--};-->
+    <!--aa(6).then((data)=>{-->
+        <!--console.log("ok"+data);-->
+    <!--},(data)=>{-->
+        <!--console.log("fail"+data);-->
+    <!--});-->
+<!--</script>-->
+
+<!--<script>-->
+    <!--var aa = function (m) {-->
+        <!--var p = new Promise((resolve,reject)=>{-->
+            <!--setTimeout(()=>{-->
+                <!--resolve(m);-->
+            <!--},1000);-->
+        <!--});-->
+        <!--return p;-->
+    <!--};-->
+    <!--aa("nz").then((data)=>{-->
+        <!--console.log("这是第一个then");-->
+        <!--console.log(data);//nz-->
+        <!--return data+" is";-->
+    <!--}).then((data)=>{-->
+        <!--console.log("这是第二个then");-->
+        <!--console.log(data);//ne is-->
+        <!--return data+" lucky";-->
+    <!--}).then((data)=>{-->
+        <!--console.log("这是第三个then");-->
+        <!--console.log(data);//ne is lucky-->
+        <!--return new Promise((resolve,reject)=>{-->
+            <!--reject("reject结束了");-->
+        <!--})-->
+    <!--}).then(()=>{-->
+        <!--console.log("resolve");-->
+    <!--},(data)=>{-->
+        <!--console.log(data);//reject结束了-->
+    <!--})-->
+<!--</script>-->
+
+<!--<script>-->
+    <!--var p1 = new Promise((resolve,reject)=>{-->
+        <!--resolve(10);-->
+    <!--});-->
+    <!--var p2 = new Promise((resolve,reject)=>{-->
+        <!--reject(20);-->
+    <!--});-->
+    <!--var p3 = new Promise((resolve,reject)=>{-->
+        <!--resolve(30);-->
+    <!--});-->
+    <!--Promise.all([p1,p2,p3]).then((data)=>{-->
+        <!--console.log(data);-->
+    <!--},(data)=>{-->
+        <!--console.log(data);-->
+        <!--console.log("拒绝啦");-->
+    <!--})-->
+<!--</script>-->
+
+<!--<script>-->
+    <!--var p = new Promise((resolve,reject)=>{-->
+        <!--var img =  new Image();-->
+        <!--img.src = 'a.png';-->
+        <!--img.onload=()=>{-->
+            <!--resolve(img);-->
+        <!--}-->
+    <!--});-->
+    <!--var picImg = new Promise((resolve,reject)=>{-->
+        <!--setTimeout(()=>{-->
+            <!--reject('图片请求超时');-->
+        <!--},5000);-->
+    <!--});-->
+    <!--Promise.race([p,picImg]).then((res)=>{-->
+        <!--console.log(res);-->
+    <!--}).catch((res)=>{-->
+        <!--console.log(res);-->
+    <!--})-->
+
+<!--</script>-->
+
+<script>
+    const p1 = new Promise((resolve,reject)=>{
+        resolve('hello');
+    }).then(result=>result).catch(e=>e);
+    const p2 = new Promise((resolve,reject)=>{
+        reject('报错了');
+    }).then(result=>result).catch(e=>e);
+    Promise.all([p1,p2]).then(result=>console.log(result)).catch(e=>console.log(e));
+</script>
+</body>
+</html>

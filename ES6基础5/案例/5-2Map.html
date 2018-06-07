@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var arr=new Map();
+//    console.log(arr);
+//    var arr1=new Map([
+//            ["nz",90],
+//            ["ls",90],
+//            ["nn",80]
+//    ]);
+//    arr1.set("ll",70);
+//    console.log(arr1.get("nz"));
+//    console.log(arr1.has("ls"));
+//    arr1.delete("nn");
+//    console.log(arr1.size);
+//    console.log(arr1);
+//    arr1.clear();
+    //遍历
+    var arr1=new Map([
+        ["nz",90],
+        ["ls",90],
+        ["nn",80]
+    ]);
+    console.log([...arr1]);
+    console.log([...arr1.keys()]);
+    console.log([...arr1.values()]);
+    console.log([...arr1.entries()]);
+    for(let item of arr1){
+        console.log(item);
+    }
+
+</script>
+</body>
+</html>
