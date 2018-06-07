@@ -1,0 +1,28 @@
+pwd查询所在目录
+cd 文件夹（进入）
+ls 列出所有文件
+git init 创建本地代码库(第二次提交代码到同一个仓库的时候，可省略)
+git add -A 加入到缓存区即本地代码库
+git commit -m "自己的信息" 提交到本地代码库
+git remote add origin http://git.coding.net/niqo/admin.git 绑定远程代码库(第二次提交代码到同一个仓库的时候，可省略)
+git push -u origin master 把本地代码库加到远程上coding
+输入coding的用户名密码。（密码不显示）
+上传成功
+
+
+第二次提交只需下面三步:
+git add -A 加入到缓存区即本地代码库
+git commit -m "自己的信息"
+git push -u origin master
+
+
+查看分支：git branch
+创建分支：git branch <name>
+切换分支：git checkout <name>
+创建+切换分支：git checkout -b <name>
+合并某分支到当前分支：git merge <name>
+删除分支：git branch -d <name>
+
+
+
+
